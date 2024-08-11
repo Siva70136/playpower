@@ -27,7 +27,7 @@ function Register() {
             body: JSON.stringify({ username, password})
         }
         try {
-            const res = await fetch('http://localhost:5000/auth/register', options);
+            const res = await fetch('https://playpower-m3kw.onrender.com/auth/register', options);
             //console.log(res);
             if (res.ok) {
                 const data = await res.json();

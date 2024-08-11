@@ -28,7 +28,7 @@ function Login() {
       body: JSON.stringify({ username, password })
     }
     //console.log(options);
-    const res = await fetch('http://localhost:5000/auth/login', options);
+    const res = await fetch('https://playpower-m3kw.onrender.com/auth/login', options);
     if (res.ok) {
       const data = await res.json();
       //console.log(data);

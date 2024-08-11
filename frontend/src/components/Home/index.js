@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { LuLogOut } from "react-icons/lu";
 import { ToastContainer, toast } from 'react-toastify';
+import { MdDeleteOutline, MdOutlineEdit } from "react-icons/md";
 import './index.css'
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
   const [assignments, setAssignments] = useState([]);
   const navigate = useNavigate('');
 
-  const url = `http://localhost:5000/assignments`;
+  const url = `https://playpower-m3kw.onrender.com/assignments`;
   const token = Cookies.get("token");
 
 
@@ -220,20 +221,16 @@ const Home = () => {
           </thead>
           <tbody>
             {
-
-              assignments.map(each => (
+              assignments.map((each, index) => (
                 <tr key={each.id}>
-                  <td><span className="val">{each.id}</span></td>
-                  <td><span className="val">{each.title}</span></td>
-                  <td><span className="val">{each.description}</span></td>
+                  <td><span className="val">{index + 1}</span></td>
+                  <td><span className="val-title">{each.title}</span></td>
+                  <td><span className="val-desc">{each.description}</span></td>
                   <td><span className="val">{each.marks}</span></td>
-                  <td>
-                    <button className="btn edit" onClick={() => { onEdit(each) }}>
-                      Edit
-                    </button>
-                    <button className="btn del" onClick={() => { remove(each.id) }}>
-                      Delete
-                    </button>
+                  <td className='delete-icon-container'>       
+                      <MdOutlineEdit className='delete-icon edit' onClick={() => { onEdit(each) }} />
+                      <MdDeleteOutline className='delete-icon del' onClick={() => { remove(each._id) }} />
+                    
                   </td>
                 </tr>
               ))

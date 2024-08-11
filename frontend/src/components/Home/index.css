@@ -2,15 +2,6 @@
     padding: 20px;
 }
 
-.todos-heading {
-    text-align: center;
-    font-family: "Roboto";
-    font-size: 46px;
-    font-weight: 500;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
 .create-task-heading {
     font-family: "Roboto";
     font-size: 32px;
@@ -20,13 +11,25 @@
     align-items: center;
 }
 
-.logout{
+.logout {
     color: #e91e63;
 }
+
 .task-heading {
     font-family: "Roboto";
     font-size: 32px;
     font-weight: 500;
+}
+
+.delete-icon-container {
+    text-align: right;
+    width: 30%;
+}
+
+.delete-icon {
+    padding: 10px;
+    font-size: 25px;
+    cursor: pointer;
 }
 
 .user-input {
@@ -65,17 +68,13 @@
     margin-left: 10px;
 }
 
-.assignment-container{
+.assignment-container {
     display: flex;
     justify-content: center;
 }
-.border {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
+.table{
+    width: 100%;
 }
-
 
 .table thead th {
     text-align: center;
@@ -97,11 +96,9 @@
 }
 
 .del {
-    background-color: rgb(251, 66, 66);
+    color: rgb(251, 66, 66);
 }
 
 .edit {
-    background-color: rgb(74, 74, 237);
-    margin-left: 20px;
+    color: rgb(74, 74, 237);
 }
-
