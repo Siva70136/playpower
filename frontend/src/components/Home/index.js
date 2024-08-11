@@ -229,7 +229,7 @@ const Home = () => {
                   <td><span className="val">{each.marks}</span></td>
                   <td className='delete-icon-container'>       
                       <MdOutlineEdit className='delete-icon edit' onClick={() => { onEdit(each) }} />
-                      <MdDeleteOutline className='delete-icon del' onClick={() => { remove(each._id) }} />
+                      <MdDeleteOutline className='delete-icon del' onClick={() => { remove(each.id) }} />
                     
                   </td>
                 </tr>
