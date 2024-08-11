@@ -1,0 +1,107 @@
+.container {
+    padding: 20px;
+}
+
+.todos-heading {
+    text-align: center;
+    font-family: "Roboto";
+    font-size: 46px;
+    font-weight: 500;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.create-task-heading {
+    font-family: "Roboto";
+    font-size: 32px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout{
+    color: #e91e63;
+}
+.task-heading {
+    font-family: "Roboto";
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.user-input {
+    background-color: white;
+    width: 90%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e4e7eb;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 15px;
+    font-weight: 600;
+    outline: none;
+}
+
+.button1 {
+    background-color: #e91e63;
+    color: white;
+    font-weight: 300;
+    margin-top: 10px;
+    font-family: "Roboto";
+    font-size: 18px;
+    border-width: 0;
+    border-radius: 4px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.update {
+    margin-left: 10px;
+}
+
+.assignment-container{
+    display: flex;
+    justify-content: center;
+}
+.border {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+
+.table thead th {
+    text-align: center;
+}
+
+.table td {
+    text-align: center;
+    margin-left: 5px;
+}
+
+.btn {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 8px;
+    margin-left: 2px;
+    border-radius: 4px;
+    color: white;
+}
+
+.del {
+    background-color: rgb(251, 66, 66);
+}
+
+.edit {
+    background-color: rgb(74, 74, 237);
+    margin-left: 20px;
+}
+
