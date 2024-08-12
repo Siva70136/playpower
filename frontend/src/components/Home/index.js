@@ -45,10 +45,8 @@ const Home = () => {
 
     try {
       const res = await fetch(url, options);
-
+      const data = await res.json();
       if (res.ok) {
-        const data = await res.json();
-        //console.log(data);
         setTitle("");
         setDesc("");
         setMarks("");
@@ -64,6 +62,18 @@ const Home = () => {
         });
         getData();
 
+      }
+      else {
+        toast.error(`${data.msg}`, {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
 
     }
@@ -105,8 +115,8 @@ const Home = () => {
     //console.log(options);
     try {
       const res = await fetch(`${url}\\${id}`, options);
+      const data = await res.json();
       if (res.ok) {
-        const data = await res.json();
         toast.success(`${data.msg}`, {
           position: "top-right",
           autoClose: 1000,
@@ -118,6 +128,19 @@ const Home = () => {
           theme: "light",
         });
         getData();
+      }
+
+      else {
+        toast.error(`${data.msg}`, {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     }
     catch {
@@ -227,10 +250,10 @@ const Home = () => {
                   <td><span className="val-title">{each.title}</span></td>
                   <td><span className="val-desc">{each.description}</span></td>
                   <td><span className="val">{each.marks}</span></td>
-                  <td className='delete-icon-container'>       
-                      <MdOutlineEdit className='delete-icon edit' onClick={() => { onEdit(each) }} />
-                      <MdDeleteOutline className='delete-icon del' onClick={() => { remove(each.id) }} />
-                    
+                  <td className='delete-icon-container'>
+                    <MdOutlineEdit className='delete-icon edit' onClick={() => { onEdit(each) }} />
+                    <MdDeleteOutline className='delete-icon del' onClick={() => { remove(each.id) }} />
+
                   </td>
                 </tr>
               ))
