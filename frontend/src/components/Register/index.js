@@ -28,12 +28,12 @@ function Register() {
         }
         try {
             const res = await fetch('https://playpower-m3kw.onrender.com/auth/register', options);
-            //console.log(res);
+            console.log(res);
             if (res.ok) {
                 const data = await res.json();
-
+                //console.log(data);
                 await new Promise((resolve) => {
-                    toast.success(`${data.message}`, {
+                    toast.success(`${data.msg}`, {
                         position: "top-right",
                         autoClose: 1000,
                         hideProgressBar: false,

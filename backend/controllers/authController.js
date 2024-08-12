@@ -7,16 +7,17 @@ const jwtSecret = process.env.JWT_SECRET;
 
 exports.register = async (req, res) => {
     const { username, password } = req.body;
+    
     try {
         
         const [rows] = await db.query('SELECT * FROM users WHERE username = ?', [username]);
-        //console.log(rows);
-        if (rows.length > 0) return res.status(400).json({ message: 'Username already exists' });
+        //console.log(rows.length>0);
+        if (rows.length > 0) return res.status(400).json({ msg: 'Username already exists' });
         const password1= await bcrypt.hash(password, saltRounds);
         //console.log(password1);
         await db.query('INSERT INTO users (username, password) VALUES (?, ?)', [username, password1]);
 
-        res.status(201).json({ message: 'User registered successfully' });
+        res.status(201).json({ msg: 'User registered successfully' });
     } catch (error) {
         res.status(500).json({ msg: 'Server error' });
     }
